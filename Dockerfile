@@ -15,4 +15,4 @@ COPY . .
 
 EXPOSE 5001
 
-CMD ["gunicorn", "-w", "2", "-b", "0.0.0.0:5001", "app:app"]
+CMD gunicorn -w 2 -b 0.0.0.0:${PORT:-5001} app:app
